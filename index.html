@@ -1,0 +1,1457 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Free online fancy text generator with 100+ styles. Create cool fonts for social media, gaming, and more.">
+    <title>Fancy Text Generator Pro | 100+ Stylish Fonts</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #6c5ce7;
+            --secondary-color: #a29bfe;
+            --accent-color: #fd79a8;
+            --dark-color: #2d3436;
+            --light-color: #f5f6fa;
+            --success-color: #00b894;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--light-color);
+            color: var(--dark-color);
+            line-height: 1.6;
+        }
+        
+        /* Header Styles */
+        .navbar {
+            background: white;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        .navbar-brand {
+            font-weight: 700;
+            font-size: 1.8rem;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+        }
+        
+        .navbar-brand i {
+            margin-right: 10px;
+            font-size: 1.5rem;
+        }
+        
+        .nav-link {
+            font-weight: 500;
+            color: var(--dark-color);
+            margin: 0 10px;
+            position: relative;
+        }
+        
+        .nav-link:hover, .nav-link.active {
+            color: var(--primary-color);
+        }
+        
+        .nav-link.active:after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: var(--primary-color);
+            border-radius: 3px;
+        }
+        
+        /* Hero Section */
+        .hero-section {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            color: white;
+            padding: 5rem 0;
+            position: relative;
+            overflow: hidden;
+            margin-bottom: 3rem;
+        }
+        
+        .hero-section:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPjxkZWZzPjxwYXR0ZXJuIGlkPSJwYXR0ZXJuIiB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHBhdHRlcm5Vbml0cz0idXNlclNwYWNlT25Vc2UiIHBhdHRlcm5UcmFuc2Zvcm09InJvdGF0ZSg0NSkiPjxyZWN0IHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgZmlsbD0icmdiYSgyNTUsMjU1LDI1NSwwLjA1KSIvPjwvcGF0dGVybj48L2RlZnM+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0idXJsKCNwYXR0ZXJuKSIvPjwvc3ZnPg==');
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .hero-title {
+            font-weight: 700;
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .hero-subtitle {
+            font-weight: 400;
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+        
+        /* Search Box */
+        .search-container {
+            max-width: 700px;
+            margin: 0 auto;
+            position: relative;
+        }
+        
+        .search-input {
+            width: 100%;
+            padding: 15px 25px;
+            border-radius: 50px;
+            border: none;
+            font-size: 1rem;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            padding-right: 60px;
+        }
+        
+        .search-btn {
+            position: absolute;
+            right: 5px;
+            top: 5px;
+            background: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 45px;
+            height: 45px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .search-btn:hover {
+            background: var(--dark-color);
+            transform: scale(1.05);
+        }
+        
+        /* Tool Cards */
+        .tools-section {
+            padding: 3rem 0;
+        }
+        
+        .section-title {
+            font-weight: 600;
+            color: var(--dark-color);
+            margin-bottom: 2rem;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .section-title:after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background: var(--primary-color);
+            border-radius: 3px;
+        }
+        
+        .tool-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+            margin-bottom: 25px;
+            height: 100%;
+            border: none;
+            position: relative;
+        }
+        
+        .tool-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .tool-card .card-body {
+            padding: 25px;
+        }
+        
+        .tool-icon {
+            width: 60px;
+            height: 60px;
+            background: rgba(108, 92, 231, 0.1);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+            color: var(--primary-color);
+            font-size: 1.5rem;
+        }
+        
+        .tool-card .card-title {
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: var(--dark-color);
+        }
+        
+        .tool-card .card-text {
+            color: #666;
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+        }
+        
+        .tool-card .btn {
+            background: var(--primary-color);
+            border: none;
+            border-radius: 8px;
+            padding: 8px 20px;
+            font-weight: 500;
+        }
+        
+        .tool-card .btn:hover {
+            background: var(--secondary-color);
+        }
+        
+        .category-badge {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: var(--accent-color);
+            color: white;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.7rem;
+            font-weight: 600;
+        }
+        
+        /* Ad Containers */
+        .ad-container {
+            background: white;
+            border-radius: 12px;
+            padding: 20px;
+            margin: 30px 0;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            border: 1px dashed #ddd;
+        }
+        
+        .ad-label {
+            font-size: 0.8rem;
+            color: #999;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 10px;
+            display: block;
+        }
+        
+        /* Tool Page Styles */
+        .tool-page {
+            padding: 3rem 0;
+        }
+        
+        .back-btn {
+            background: white;
+            color: var(--primary-color);
+            border: 1px solid var(--primary-color);
+            border-radius: 8px;
+            padding: 8px 20px;
+            font-weight: 500;
+            display: inline-flex;
+            align-items: center;
+            margin-bottom: 20px;
+            transition: all 0.3s;
+        }
+        
+        .back-btn i {
+            margin-right: 8px;
+        }
+        
+        .back-btn:hover {
+            background: var(--primary-color);
+            color: white;
+            transform: translateX(-5px);
+        }
+        
+        .tool-container {
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 5px 30px rgba(0, 0, 0, 0.08);
+        }
+        
+        .tool-title {
+            color: var(--primary-color);
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid #eee;
+            display: flex;
+            align-items: center;
+        }
+        
+        .tool-title i {
+            margin-right: 15px;
+            font-size: 1.8rem;
+        }
+        
+        .input-group-text {
+            background: var(--primary-color);
+            color: white;
+            border: none;
+        }
+        
+        .form-control, .form-select {
+            border-radius: 8px;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+        }
+        
+        .form-control:focus, .form-select:focus {
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 0.25rem rgba(108, 92, 231, 0.25);
+        }
+        
+        .btn-primary {
+            background: var(--primary-color);
+            border: none;
+            border-radius: 8px;
+            padding: 12px 25px;
+            font-weight: 500;
+            transition: all 0.3s;
+        }
+        
+        .btn-primary:hover {
+            background: var(--secondary-color);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(108, 92, 231, 0.3);
+        }
+        
+        .result-container {
+            background: var(--light-color);
+            border-radius: 12px;
+            padding: 20px;
+            margin-top: 30px;
+            border: 1px solid #eee;
+        }
+        
+        .result-title {
+            font-weight: 600;
+            margin-bottom: 15px;
+            color: var(--dark-color);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        
+        .result-text {
+            min-height: 100px;
+            font-size: 1.2rem;
+            line-height: 1.8;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+        }
+        
+        .copy-btn {
+            background: var(--success-color);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            padding: 5px 15px;
+            font-size: 0.9rem;
+            transition: all 0.3s;
+        }
+        
+        .copy-btn:hover {
+            background: #00997b;
+            transform: translateY(-2px);
+        }
+        
+        .copy-btn.copied {
+            background: var(--dark-color);
+        }
+        
+        /* Style Preview Cards */
+        .style-previews {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 15px;
+            margin: 20px 0;
+        }
+        
+        .style-card {
+            background: white;
+            border-radius: 8px;
+            padding: 15px;
+            cursor: pointer;
+            transition: all 0.3s;
+            border: 2px solid transparent;
+            text-align: center;
+        }
+        
+        .style-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .style-card.active {
+            border-color: var(--primary-color);
+            background: rgba(108, 92, 231, 0.05);
+        }
+        
+        .style-name {
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: var(--dark-color);
+        }
+        
+        /* Footer Styles */
+        footer {
+            background: var(--dark-color);
+            color: white;
+            padding: 4rem 0 2rem;
+            margin-top: 4rem;
+        }
+        
+        .footer-logo {
+            font-weight: 700;
+            font-size: 1.8rem;
+            color: white;
+            margin-bottom: 20px;
+            display: inline-block;
+        }
+        
+        .footer-about {
+            margin-bottom: 20px;
+            opacity: 0.8;
+        }
+        
+        .footer-title {
+            font-weight: 600;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .footer-title:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 40px;
+            height: 2px;
+            background: var(--primary-color);
+        }
+        
+        .footer-links {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-links a {
+            color: #ddd;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+        
+        .footer-links a:hover {
+            color: var(--primary-color);
+            padding-left: 5px;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .social-link {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            transition: all 0.3s;
+        }
+        
+        .social-link:hover {
+            background: var(--primary-color);
+            transform: translateY(-3px);
+        }
+        
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 20px;
+            margin-top: 40px;
+            text-align: center;
+            opacity: 0.7;
+            font-size: 0.9rem;
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            .hero-title {
+                font-size: 2.5rem;
+            }
+            
+            .tool-card .card-body {
+                padding: 20px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .hero-section {
+                padding: 3rem 0;
+            }
+            
+            .hero-title {
+                font-size: 2rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1rem;
+            }
+            
+            .tool-container {
+                padding: 20px;
+            }
+            
+            .tool-title {
+                font-size: 1.5rem;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .navbar-brand {
+                font-size: 1.5rem;
+            }
+            
+            .hero-title {
+                font-size: 1.8rem;
+            }
+            
+            .search-input {
+                padding: 12px 20px;
+            }
+            
+            .style-previews {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Dynamic Header -->
+    <div id="header-container"></div>
+    
+    <!-- Main Content -->
+    <div id="main-content">
+        <!-- Home Page Content -->
+        <section class="hero-section">
+            <div class="container">
+                <div class="hero-content text-center">
+                    <h1 class="hero-title">Fancy Text Generator Pro</h1>
+                    <p class="hero-subtitle">Create stylish fonts for social media, gaming usernames, and more with 100+ cool text styles</p>
+                    
+                    <div class="search-container">
+                        <input type="text" class="search-input" id="tool-search" placeholder="Search for tools...">
+                        <button class="search-btn" id="search-btn">
+                            <i class="fas fa-search"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <div class="container">
+            <!-- Ad Space -->
+            <div class="ad-container">
+                <span class="ad-label">Advertisement</span>
+                <div class="text-center">
+                    <img src="https://via.placeholder.com/728x90?text=Ad+Space" alt="Advertisement" class="img-fluid rounded">
+                </div>
+            </div>
+            
+            <!-- Popular Tools -->
+            <section class="tools-section">
+                <h2 class="section-title">Popular Tools</h2>
+                <div class="row" id="popular-tools">
+                    <!-- Popular tools will be loaded here -->
+                </div>
+            </section>
+            
+            <!-- Ad Space -->
+            <div class="ad-container">
+                <span class="ad-label">Advertisement</span>
+                <div class="text-center">
+                    <img src="https://via.placeholder.com/728x90?text=Ad+Space" alt="Advertisement" class="img-fluid rounded">
+                </div>
+            </div>
+            
+            <!-- Text Tools -->
+            <section class="tools-section">
+                <h2 class="section-title">Text Tools</h2>
+                <div class="row" id="text-tools">
+                    <!-- Text tools will be loaded here -->
+                </div>
+            </section>
+            
+            <!-- Image Tools -->
+            <section class="tools-section">
+                <h2 class="section-title">Image Tools</h2>
+                <div class="row" id="image-tools">
+                    <!-- Image tools will be loaded here -->
+                </div>
+            </section>
+            
+            <!-- Developer Tools -->
+            <section class="tools-section">
+                <h2 class="section-title">Developer Tools</h2>
+                <div class="row" id="developer-tools">
+                    <!-- Developer tools will be loaded here -->
+                </div>
+            </section>
+        </div>
+    </div>
+    
+    <!-- Tool Page Template (hidden by default) -->
+    <div id="tool-page-template" style="display: none;">
+        <section class="tool-page">
+            <div class="container">
+                <button class="back-btn" id="back-to-home">
+                    <i class="fas fa-arrow-left"></i> Back to All Tools
+                </button>
+                
+                <!-- Ad Space -->
+                <div class="ad-container">
+                    <span class="ad-label">Advertisement</span>
+                    <div class="text-center">
+                        <img src="https://via.placeholder.com/728x90?text=Ad+Space" alt="Advertisement" class="img-fluid rounded">
+                    </div>
+                </div>
+                
+                <!-- Tool Container -->
+                <div class="tool-container">
+                    <h1 class="tool-title" id="tool-page-title">
+                        <i class="fas fa-font"></i> Fancy Text Generator
+                    </h1>
+                    
+                    <div id="tool-content">
+                        <!-- Tool content will be loaded here -->
+                    </div>
+                </div>
+                
+                <!-- Ad Space -->
+                <div class="ad-container">
+                    <span class="ad-label">Advertisement</span>
+                    <div class="text-center">
+                        <img src="https://via.placeholder.com/728x90?text=Ad+Space" alt="Advertisement" class="img-fluid rounded">
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    
+    <!-- Dynamic Footer -->
+    <div id="footer-container"></div>
+    
+    <!-- Fancy Text Tool Content (hidden by default) -->
+    <div id="fancy-text-tool-content" style="display: none;">
+        <div class="mb-4">
+            <label for="input-text" class="form-label">Enter your text below:</label>
+            <textarea class="form-control" id="input-text" rows="5" placeholder="Type something here to convert it to fancy text..."></textarea>
+        </div>
+        
+        <div class="row mb-4">
+            <div class="col-md-6 mb-3">
+                <label class="form-label">Text Style:</label>
+                <div class="style-previews" id="style-previews">
+                    <!-- Style previews will be loaded here -->
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label">Font Size:</label>
+                        <select class="form-select" id="font-size">
+                            <option value="small">Small</option>
+                            <option value="medium" selected>Medium</option>
+                            <option value="large">Large</option>
+                            <option value="xlarge">Extra Large</option>
+                        </select>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label">Output Format:</label>
+                        <select class="form-select" id="output-format">
+                            <option value="plain" selected>Plain Text</option>
+                            <option value="html">HTML</option>
+                            <option value="bbcode">BBCode</option>
+                            <option value="markdown">Markdown</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="d-grid">
+                    <button class="btn btn-primary btn-lg" id="generate-btn">
+                        <i class="fas fa-magic"></i> Generate Fancy Text
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <div class="result-container">
+            <div class="result-title">
+                <span><i class="fas fa-clipboard"></i> Result</span>
+                <button class="copy-btn" id="copy-btn">
+                    <i class="fas fa-copy"></i> Copy Text
+                </button>
+            </div>
+            <div class="result-text" id="result-text"></div>
+        </div>
+        
+        <div class="mt-5">
+            <h4><i class="fas fa-info-circle"></i> About Fancy Text Generator</h4>
+            <p>This tool converts your normal text into fancy styled text that you can use on social media platforms, in emails, or anywhere you want to stand out. The generated text uses Unicode characters to create the appearance of different fonts.</p>
+            
+            <h5 class="mt-4"><i class="fas fa-lightbulb"></i> How to use:</h5>
+            <ol>
+                <li>Enter your text in the input box above</li>
+                <li>Select your preferred text style from the options</li>
+                <li>Click "Generate Fancy Text" to see the result</li>
+                <li>Copy the result and paste it wherever you need</li>
+            </ol>
+            
+            <div class="alert alert-info mt-4">
+                <i class="fas fa-exclamation-circle"></i> <strong>Note:</strong> Some social platforms may not support all fancy text styles. If your text appears as normal after pasting, try a different style.
+            </div>
+        </div>
+    </div>
+    
+    <!-- Sample Other Tool Content (hidden by default) -->
+    <div id="sample-tool-content" style="display: none;">
+        <div class="alert alert-info">
+            <h4><i class="fas fa-tools"></i> This is a sample tool page</h4>
+            <p>In a complete implementation, this would include the actual tool interface and functionality for the selected tool.</p>
+            <p>For demonstration purposes, we've fully implemented only the Fancy Text Generator tool.</p>
+        </div>
+        
+        <div class="mb-4">
+            <label class="form-label">Sample Input:</label>
+            <input type="text" class="form-control" placeholder="This would be tool-specific input">
+        </div>
+        
+        <button class="btn btn-primary">
+            <i class="fas fa-cog"></i> Process
+        </button>
+        
+        <div class="result-container mt-4">
+            <div class="result-title">
+                <span><i class="fas fa-clipboard"></i> Result</span>
+            </div>
+            <div class="result-text">
+                This would show the tool's output.
+            </div>
+        </div>
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Global variables
+        let currentPage = 'home';
+        
+        // Sample tools data
+        const tools = [
+            // Text Tools
+            { 
+                id: 'fancy-text', 
+                name: 'Fancy Text Generator', 
+                icon: 'fa-font', 
+                category: 'text', 
+                description: 'Convert normal text to stylish fancy text with 100+ font styles',
+                popular: true
+            },
+            { 
+                id: 'word-counter', 
+                name: 'Word Counter', 
+                icon: 'fa-align-left', 
+                category: 'text', 
+                description: 'Count words, characters, sentences and more in your text',
+                popular: true
+            },
+            { 
+                id: 'text-to-speech', 
+                name: 'Text to Speech', 
+                icon: 'fa-volume-up', 
+                category: 'text', 
+                description: 'Convert text to natural sounding voice with multiple voices'
+            },
+            { 
+                id: 'case-converter', 
+                name: 'Case Converter', 
+                icon: 'fa-text-height', 
+                category: 'text', 
+                description: 'Change text case to uppercase, lowercase, title case etc.',
+                popular: true
+            },
+            { 
+                id: 'password-generator', 
+                name: 'Password Generator', 
+                icon: 'fa-key', 
+                category: 'text', 
+                description: 'Create strong, random passwords for your accounts'
+            },
+            
+            // Image Tools
+            { 
+                id: 'image-resizer', 
+                name: 'Image Resizer', 
+                icon: 'fa-image', 
+                category: 'image', 
+                description: 'Resize images without losing quality',
+                popular: true
+            },
+            { 
+                id: 'image-converter', 
+                name: 'Image Converter', 
+                icon: 'fa-file-image', 
+                category: 'image', 
+                description: 'Convert between JPG, PNG, GIF, WEBP and more formats'
+            },
+            { 
+                id: 'image-compressor', 
+                name: 'Image Compressor', 
+                icon: 'fa-compress-alt', 
+                category: 'image', 
+                description: 'Reduce image file size while keeping good quality',
+                popular: true
+            },
+            
+            // Developer Tools
+            { 
+                id: 'json-formatter', 
+                name: 'JSON Formatter', 
+                icon: 'fa-code', 
+                category: 'developer', 
+                description: 'Format and validate JSON data with syntax highlighting'
+            },
+            { 
+                id: 'html-prettify', 
+                name: 'HTML Prettifier', 
+                icon: 'fa-file-code', 
+                category: 'developer', 
+                description: 'Format and beautify HTML code for better readability',
+                popular: true
+            },
+            { 
+                id: 'base64-converter', 
+                name: 'Base64 Converter', 
+                icon: 'fa-lock', 
+                category: 'developer', 
+                description: 'Encode and decode Base64 strings and files'
+            }
+        ];
+        
+        // Text styles for fancy text generator
+        const textStyles = [
+            {
+                id: 'bold',
+                name: 'Bold Text',
+                preview: '𝐁𝐨𝐥𝐝 𝐓𝐞𝐱𝐭',
+                offset: 0x1D400,
+                length: 26
+            },
+            {
+                id: 'italic',
+                name: 'Italic Text',
+                preview: '𝐼𝑡𝑎𝑙𝑖𝑐 𝑇𝑒𝑥𝑡',
+                offset: 0x1D434,
+                length: 26
+            },
+            {
+                id: 'bold-italic',
+                name: 'Bold Italic',
+                preview: '𝑩𝒐𝒍𝒅 𝑰𝒕𝒂𝒍𝒊𝒄',
+                offset: 0x1D468,
+                length: 26
+            },
+            {
+                id: 'script',
+                name: 'Script',
+                preview: '𝒮𝒸𝓇𝒾𝓅𝓉',
+                offset: 0x1D4D0,
+                length: 26
+            },
+            {
+                id: 'cursive',
+                name: 'Cursive',
+                preview: '𝓒𝓾𝓻𝓼𝓲𝓿𝓮',
+                offset: 0x1D4AA,
+                length: 26
+            },
+            {
+                id: 'double-struck',
+                name: 'Double Struck',
+                preview: '𝔻𝕠𝕦𝕓𝕝𝕖 𝕊𝕥𝕣𝕦𝕔𝕜',
+                offset: 0x1D538,
+                length: 26
+            },
+            {
+                id: 'fraktur',
+                name: 'Fraktur',
+                preview: '𝕱𝖗𝖆𝖐𝖙𝖚𝖗',
+                offset: 0x1D504,
+                length: 26
+            },
+            {
+                id: 'sans-serif',
+                name: 'Sans-Serif',
+                preview: '𝖲𝖺𝗇𝗌-𝖲𝖾𝗋𝗂𝖿',
+                offset: 0x1D5A0,
+                length: 26
+            },
+            {
+                id: 'monospace',
+                name: 'Monospace',
+                preview: '𝙼𝚘𝚗𝚘𝚜𝚙𝚊𝚌𝚎',
+                offset: 0x1D670,
+                length: 26
+            },
+            {
+                id: 'circled',
+                name: 'Circled',
+                preview: 'Ⓒⓘⓡⓒⓛⓔⓓ',
+                offset: 0x24B6,
+                length: 26
+            },
+            {
+                id: 'parenthesized',
+                name: 'Parenthesized',
+                preview: '⒫⒜⒭⒠⒩⒯⒣⒠⒮⒤⒵⒠⒟',
+                offset: 0x249C,
+                length: 26
+            },
+            {
+                id: 'small-caps',
+                name: 'Small Caps',
+                preview: 'sᴍᴀʟʟ ᴄᴀᴘs',
+                offset: 0x1D00,
+                length: 26
+            }
+        ];
+        
+        // Initialize the page
+        document.addEventListener('DOMContentLoaded', function() {
+            loadHeader();
+            loadFooter();
+            renderHomePage();
+            setupEventListeners();
+        });
+        
+        // Load header dynamically
+        function loadHeader() {
+            const headerContainer = document.getElementById('header-container');
+            headerContainer.innerHTML = `
+                <nav class="navbar navbar-expand-lg">
+                    <div class="container">
+                        <a class="navbar-brand" href="#" id="main-logo">
+                            <i class="fas fa-magic"></i> FancyTools
+                        </a>
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarNav">
+                            <ul class="navbar-nav ms-auto">
+                                <li class="nav-item">
+                                    <a class="nav-link active" href="#" data-page="home">Home</a>
+                                </li>
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="#" id="categoriesDropdown" role="button" data-bs-toggle="dropdown">
+                                        Categories
+                                    </a>
+                                    <ul class="dropdown-menu">
+                                        <li><a class="dropdown-item" href="#" data-category="text">Text Tools</a></li>
+                                        <li><a class="dropdown-item" href="#" data-category="image">Image Tools</a></li>
+                                        <li><a class="dropdown-item" href="#" data-category="developer">Developer Tools</a></li>
+                                    </ul>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">About</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">Contact</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+            `;
+        }
+        
+        // Load footer dynamically
+        function loadFooter() {
+            const footerContainer = document.getElementById('footer-container');
+            footerContainer.innerHTML = `
+                <footer>
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-4 mb-4">
+                                <a href="#" class="footer-logo">
+                                    <i class="fas fa-magic"></i> FancyTools
+                                </a>
+                                <p class="footer-about">
+                                    Your one-stop destination for free online tools to make your work easier. 
+                                    100+ tools for text, images, development, and more.
+                                </p>
+                                <div class="social-links">
+                                    <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                                    <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                                    <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                                    <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                                </div>
+                            </div>
+                            <div class="col-lg-2 col-md-4 mb-4">
+                                <h5 class="footer-title">Tools</h5>
+                                <ul class="footer-links">
+                                    <li><a href="#" data-category="text">Text Tools</a></li>
+                                    <li><a href="#" data-category="image">Image Tools</a></li>
+                                    <li><a href="#" data-category="developer">Developer Tools</a></li>
+                                    <li><a href="#">All Tools</a></li>
+                                </ul>
+                            </div>
+                            <div class="col-lg-2 col-md-4 mb-4">
+                                <h5 class="footer-title">Company</h5>
+                                <ul class="footer-links">
+                                    <li><a href="#">About Us</a></li>
+                                    <li><a href="#">Contact</a></li>
+                                    <li><a href="#">Privacy Policy</a></li>
+                                    <li><a href="#">Terms of Service</a></li>
+                                </ul>
+                            </div>
+                            <div class="col-lg-4 col-md-4 mb-4">
+                                <h5 class="footer-title">Newsletter</h5>
+                                <p>Subscribe to get updates on new tools and features.</p>
+                                <div class="input-group mb-3">
+                                    <input type="email" class="form-control" placeholder="Your email">
+                                    <button class="btn btn-primary" type="button">Subscribe</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="footer-bottom">
+                            <p>&copy; ${new Date().getFullYear()} FancyTools. All rights reserved.</p>
+                        </div>
+                    </div>
+                </footer>
+            `;
+        }
+        
+        // Render home page with all tools
+        function renderHomePage() {
+            currentPage = 'home';
+            document.getElementById('main-content').style.display = 'block';
+            document.getElementById('tool-page-template').style.display = 'none';
+            
+            // Render popular tools
+            const popularTools = tools.filter(tool => tool.popular);
+            renderToolGrid('popular-tools', popularTools);
+            
+            // Render text tools
+            const textTools = tools.filter(tool => tool.category === 'text');
+            renderToolGrid('text-tools', textTools);
+            
+            // Render image tools
+            const imageTools = tools.filter(tool => tool.category === 'image');
+            renderToolGrid('image-tools', imageTools);
+            
+            // Render developer tools
+            const developerTools = tools.filter(tool => tool.category === 'developer');
+            renderToolGrid('developer-tools', developerTools);
+            
+            // Update active nav link
+            updateActiveNavLink('home');
+        }
+        
+        // Render a grid of tools
+        function renderToolGrid(containerId, toolsToRender) {
+            const container = document.getElementById(containerId);
+            container.innerHTML = '';
+            
+            toolsToRender.forEach(tool => {
+                const toolCard = document.createElement('div');
+                toolCard.className = 'col-lg-3 col-md-4 col-sm-6';
+                toolCard.innerHTML = `
+                    <div class="card tool-card" data-tool-id="${tool.id}">
+                        <div class="card-body">
+                            <div class="tool-icon">
+                                <i class="fas ${tool.icon}"></i>
+                            </div>
+                            <h5 class="card-title">${tool.name}</h5>
+                            <p class="card-text">${tool.description}</p>
+                            <button class="btn btn-sm">Use Tool</button>
+                            <span class="category-badge">${tool.category.charAt(0).toUpperCase() + tool.category.slice(1)}</span>
+                        </div>
+                    </div>
+                `;
+                container.appendChild(toolCard);
+            });
+        }
+        
+        // Setup event listeners
+        function setupEventListeners() {
+            // Home navigation
+            document.addEventListener('click', function(e) {
+                if (e.target.matches('[data-page="home"], #main-logo')) {
+                    e.preventDefault();
+                    renderHomePage();
+                }
+                
+                // Category filtering
+                if (e.target.matches('[data-category]')) {
+                    e.preventDefault();
+                    const category = e.target.getAttribute('data-category');
+                    filterToolsByCategory(category);
+                }
+                
+                // Tool card click
+                if (e.target.closest('.tool-card')) {
+                    e.preventDefault();
+                    const toolCard = e.target.closest('.tool-card');
+                    const toolId = toolCard.getAttribute('data-tool-id');
+                    loadToolPage(toolId);
+                }
+                
+                // Back to home button
+                if (e.target.matches('#back-to-home, #back-to-home *')) {
+                    e.preventDefault();
+                    renderHomePage();
+                }
+                
+                // Search button
+                if (e.target.matches('#search-btn, #search-btn *')) {
+                    e.preventDefault();
+                    performSearch();
+                }
+                
+                // Press Enter in search box
+                if (e.target.matches('#tool-search') && e.key === 'Enter') {
+                    performSearch();
+                }
+                
+                // Style card selection
+                if (e.target.closest('.style-card')) {
+                    e.preventDefault();
+                    const styleCard = e.target.closest('.style-card');
+                    selectStyleCard(styleCard);
+                }
+            });
+            
+            // For tool page functionality
+            document.addEventListener('click', function(e) {
+                if (e.target.matches('#generate-btn')) {
+                    generateFancyText();
+                }
+                
+                if (e.target.matches('#copy-btn')) {
+                    copyToClipboard();
+                }
+            });
+        }
+        
+        // Filter tools by category
+        function filterToolsByCategory(category) {
+            const filteredTools = tools.filter(tool => tool.category === category);
+            const categoryName = category.charAt(0).toUpperCase() + category.slice(1);
+            
+            // Update the main content to show only filtered tools
+            document.getElementById('main-content').innerHTML = `
+                <section class="tools-section">
+                    <div class="container">
+                        <button class="back-btn mb-3" data-page="home">
+                            <i class="fas fa-arrow-left"></i> Back to All Tools
+                        </button>
+                        
+                        <h2 class="section-title">${categoryName} Tools</h2>
+                        
+                        <div class="ad-container">
+                            <span class="ad-label">Advertisement</span>
+                            <div class="text-center">
+                                <img src="https://via.placeholder.com/728x90?text=Ad+Space" alt="Advertisement" class="img-fluid rounded">
+                            </div>
+                        </div>
+                        
+                        <div class="row" id="filtered-tools"></div>
+                    </div>
+                </section>
+            `;
+            
+            renderToolGrid('filtered-tools', filteredTools);
+            updateActiveNavLink(category);
+        }
+        
+        // Perform search
+        function performSearch() {
+            const searchTerm = document.getElementById('tool-search').value.toLowerCase();
+            
+            if (!searchTerm.trim()) {
+                renderHomePage();
+                return;
+            }
+            
+            const filteredTools = tools.filter(tool => 
+                tool.name.toLowerCase().includes(searchTerm) || 
+                tool.description.toLowerCase().includes(searchTerm) ||
+                tool.category.toLowerCase().includes(searchTerm)
+            );
+            
+            // Update the main content to show search results
+            document.getElementById('main-content').innerHTML = `
+                <section class="tools-section">
+                    <div class="container">
+                        <button class="back-btn mb-3" data-page="home">
+                            <i class="fas fa-arrow-left"></i> Back to All Tools
+                        </button>
+                        
+                        <h2 class="section-title">Search Results for "${searchTerm}"</h2>
+                        
+                        <div class="ad-container">
+                            <span class="ad-label">Advertisement</span>
+                            <div class="text-center">
+                                <img src="https://via.placeholder.com/728x90?text=Ad+Space" alt="Advertisement" class="img-fluid rounded">
+                            </div>
+                        </div>
+                        
+                        ${filteredTools.length > 0 ? 
+                            '<div class="row" id="search-results"></div>' : 
+                            '<div class="alert alert-info">No tools found matching your search.</div>'}
+                    </div>
+                </section>
+            `;
+            
+            if (filteredTools.length > 0) {
+                renderToolGrid('search-results', filteredTools);
+            }
+        }
+        
+        // Load a tool page
+        function loadToolPage(toolId) {
+            currentPage = toolId;
+            const tool = tools.find(t => t.id === toolId);
+            
+            if (!tool) {
+                renderHomePage();
+                return;
+            }
+            
+            // Hide main content and show tool template
+            document.getElementById('main-content').style.display = 'none';
+            const toolPage = document.getElementById('tool-page-template');
+            toolPage.style.display = 'block';
+            
+            // Set tool title
+            document.getElementById('tool-page-title').innerHTML = `
+                <i class="fas ${tool.icon}"></i> ${tool.name}
+            `;
+            
+            // Load tool-specific content
+            const toolContent = document.getElementById('tool-content');
+            toolContent.innerHTML = '';
+            
+            // Based on tool ID, load different content
+            if (toolId === 'fancy-text') {
+                const fancyTextContent = document.getElementById('fancy-text-tool-content').cloneNode(true);
+                fancyTextContent.style.display = 'block';
+                
+                // Load style previews
+                const stylePreviews = fancyTextContent.querySelector('#style-previews');
+                textStyles.forEach(style => {
+                    const styleCard = document.createElement('div');
+                    styleCard.className = 'style-card';
+                    styleCard.setAttribute('data-style-id', style.id);
+                    styleCard.innerHTML = `
+                        <div class="style-name">${style.name}</div>
+                        <div class="style-preview">${style.preview}</div>
+                    `;
+                    stylePreviews.appendChild(styleCard);
+                });
+                
+                // Select first style by default
+                if (stylePreviews.firstChild) {
+                    stylePreviews.firstChild.classList.add('active');
+                }
+                
+                toolContent.appendChild(fancyTextContent);
+            } else {
+                // Default content for other tools
+                const sampleContent = document.getElementById('sample-tool-content').cloneNode(true);
+                sampleContent.style.display = 'block';
+                toolContent.appendChild(sampleContent);
+            }
+            
+            updateActiveNavLink(toolId);
+        }
+        
+        // Update active navigation link
+        function updateActiveNavLink(activeItem) {
+            document.querySelectorAll('.nav-link').forEach(link => {
+                link.classList.remove('active');
+            });
+            
+            if (activeItem === 'home') {
+                document.querySelector('[data-page="home"]').classList.add('active');
+            } else if (['text', 'image', 'developer'].includes(activeItem)) {
+                document.querySelector(`[data-category="${activeItem}"]`).classList.add('active');
+            }
+        }
+        
+        // Select a style card in fancy text generator
+        function selectStyleCard(styleCard) {
+            document.querySelectorAll('.style-card').forEach(card => {
+                card.classList.remove('active');
+            });
+            styleCard.classList.add('active');
+        }
+        
+        // Fancy Text Generator functionality
+        function generateFancyText() {
+            const inputText = document.getElementById('input-text').value;
+            const fontSize = document.getElementById('font-size').value;
+            const outputFormat = document.getElementById('output-format').value;
+            
+            // Get selected style
+            const selectedStyleCard = document.querySelector('.style-card.active');
+            if (!selectedStyleCard) return;
+            
+            const styleId = selectedStyleCard.getAttribute('data-style-id');
+            const style = textStyles.find(s => s.id === styleId);
+            
+            if (!inputText.trim()) {
+                document.getElementById('result-text').textContent = 'Please enter some text first.';
+                return;
+            }
+            
+            let result = '';
+            
+            for (let i = 0; i < inputText.length; i++) {
+                const char = inputText[i];
+                const lowerChar = char.toLowerCase();
+                
+                if (lowerChar >= 'a' && lowerChar <= 'z') {
+                    // Convert letters to fancy style
+                    const charCode = lowerChar.charCodeAt(0) - 'a'.charCodeAt(0);
+                    if (charCode < style.length) {
+                        result += String.fromCodePoint(style.offset + charCode);
+                    } else {
+                        result += char;
+                    }
+                } else if (char >= 'A' && char <= 'Z') {
+                    // Convert uppercase letters to fancy style
+                    const charCode = char.charCodeAt(0) - 'A'.charCodeAt(0);
+                    if (charCode < style.length) {
+                        result += String.fromCodePoint(style.offset + charCode);
+                    } else {
+                        result += char;
+                    }
+                } else {
+                    // Keep non-alphabetic characters as-is
+                    result += char;
+                }
+            }
+            
+            // Apply output format
+            switch (outputFormat) {
+                case 'html':
+                    result = `<span style="font-family: monospace">${result}</span>`;
+                    break;
+                case 'bbcode':
+                    result = `[font=monospace]${result}[/font]`;
+                    break;
+                case 'markdown':
+                    result = "```\n" + result + "\n```";
+                    break;
+            }
+            
+            // Apply font size
+            let sizeValue = '1.2rem';
+            switch (fontSize) {
+                case 'small': sizeValue = '0.9rem'; break;
+                case 'medium': sizeValue = '1.2rem'; break;
+                case 'large': sizeValue = '1.5rem'; break;
+                case 'xlarge': sizeValue = '2rem'; break;
+            }
+            
+            document.getElementById('result-text').innerHTML = result;
+            document.getElementById('result-text').style.fontSize = sizeValue;
+        }
+        
+        // Copy to clipboard function
+        function copyToClipboard() {
+            const resultText = document.getElementById('result-text').textContent;
+            const copyBtn = document.getElementById('copy-btn');
+            
+            if (!resultText.trim()) {
+                alert('Nothing to copy! Generate some fancy text first.');
+                return;
+            }
+            
+            navigator.clipboard.writeText(resultText).then(() => {
+                copyBtn.innerHTML = '<i class="fas fa-check"></i> Copied!';
+                copyBtn.classList.add('copied');
+                
+                setTimeout(() => {
+                    copyBtn.innerHTML = '<i class="fas fa-copy"></i> Copy Text';
+                    copyBtn.classList.remove('copied');
+                }, 2000);
+            }).catch(err => {
+                console.error('Failed to copy text: ', err);
+                
+                // Fallback for browsers that don't support clipboard API
+                const textarea = document.createElement('textarea');
+                textarea.value = resultText;
+                document.body.appendChild(textarea);
+                textarea.select();
+                document.execCommand('copy');
+                document.body.removeChild(textarea);
+                
+                copyBtn.innerHTML = '<i class="fas fa-check"></i> Copied!';
+                copyBtn.classList.add('copied');
+                
+                setTimeout(() => {
+                    copyBtn.innerHTML = '<i class="fas fa-copy"></i> Copy Text';
+                    copyBtn.classList.remove('copied');
+                }, 2000);
+            });
+        }
+    </script>
+</body>
+</html>
